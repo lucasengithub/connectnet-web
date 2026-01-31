@@ -1,0 +1,28 @@
+---
+interface Props {
+    img: string;
+    ancho?: string;
+    dir?: string;
+    children: string[];
+}
+const { img, ancho = "50", dir = "row" } = Astro.props;
+---
+
+<div class="col2" style={`flex-direction: ${dir}`}>
+    <img src={img} style={`width: ${ancho}%`} />
+
+    <div class="e1"><slot /></div>
+</div>
+
+<style>
+    .col2 {
+        display: flex;
+        justify-content: top;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    img {
+        height: auto;
+    }
+</style>

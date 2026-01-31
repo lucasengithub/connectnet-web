@@ -1,0 +1,23 @@
+:root {
+    --verdecolor: #00ff00; /* global scope */
+}
+
+a {
+    color: var(--verdecolor);
+}
+.dm-sans {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    background-color: black;
+    font-family: "DM Sans";
+    color: white;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}

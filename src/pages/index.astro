@@ -1,40 +1,37 @@
 ---
 import NavBar from "../components/navBar.astro";
+import GlobalHead from "../components/GlobalHead.astro";
+import ColDos from "../components/ColDos.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="es">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>ConnectNet</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-            rel="stylesheet"
-        />
-    </head>
+    <GlobalHead />
     <body>
         <NavBar />
-        <img id="trota" src="/caballo.png" />
+        <div class="trota">
+            <img src="/connectnet-b.png" height="60px" />
+            <b style="color: black;">todo funciona con todo</b>
+        </div>
         <section id="content">
-            <h1>Conecta tu pantalla con cualquier pantalla.</h1>
-            <p>
-                connectnet (anteriormente SystemConnect) es una red
-                descentralizada para conectar cosas con cosas.
-            </p>
-            <p>
-                Por medio de red, puedes conectar tu pantalla a cualquier otra
-                pantalla por medio de internet de manera sencilla.
-            </p>
-            <p>
-                Si tienes que presentar algo en un proyector, no hace falta que
-                cambies cables entre ordenadores, simplemente abre connectnet en
-                ambos ordenadores.
-            </p><b>Sin cables, sin cambio de entradas, sin problemas.</b>
+            <h1>Conecta tu pantalla a cualquier pantalla.</h1>
+
+            <ColDos ancho="30" img="/connectinfo.jpg">
+                <p>
+                    connectnet (anteriormente SystemConnect) es una red
+                    descentralizada para conectar cosas con cosas.
+                </p>
+                <p>
+                    Por medio de red, puedes conectar tu pantalla a cualquier
+                    otra pantalla por medio de internet de manera sencilla.
+                </p>
+                <p>
+                    Si tienes que presentar algo en un proyector, no hace falta
+                    que cambies cables entre ordenadores, simplemente abre
+                    connectnet en ambos ordenadores.
+                </p><b>Sin cables, sin cambio de entradas, sin problemas.</b>
+            </ColDos>
+
             <h1>Ideal para pantallas públicas y conferencias.</h1>
             <p>
                 connectnet es ideal para conferencias, aulas, salas de reuniones
@@ -59,7 +56,7 @@ import NavBar from "../components/navBar.astro";
             <p>
                 El acceso al código permite a todo el mundo adaptar connectnet a
                 sus necesidades y auditar el código fuente para construir una
-                plataforma moderna, segura y abierta.<a
+                plataforma moderna, segura y abierta. <a
                     href="https://x.com/hashtag/MadeinEU"
                     target="_blank"
                 >
@@ -67,34 +64,27 @@ import NavBar from "../components/navBar.astro";
                 >
             </p>
         </section>
-    </body>
+    </body><Footer />
+
     <style>
-        a {
-            color: #00ff00;
-        }
-        .dm-sans-<uniquifier > {
-            font-family: "DM Sans", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: <weight>;
-            font-style: normal;
-        }
-        body {
-            background-color: black;
-            font-family: "DM Sans";
-            color: white;
-            border: 0;
-            padding: 0;
-            margin: 0;
+        .trota {
+            width: 100%;
+            height: 80vh;
+            background-color: #00ff00;
+            background-image: url("/caballo2.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border: none;
             display: flex;
             flex-direction: column;
-        }
-        #trota {
-            width: 100%;
-            height: auto;
-            border: none;
+            align-items: center;
+            justify-content: center;
         }
         #content {
             margin: 20px;
+            max-width: 900px;
+            align-self: center;
         }
     </style>
 </html>
