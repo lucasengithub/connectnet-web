@@ -25,4 +25,13 @@ const { img, ancho = "50", dir = "row" } = Astro.props;
     img {
         height: auto;
     }
+
+    @media screen and (max-width: 600px) {
+        .col2 {
+            flex-direction: column !important;
+        }
+        img {
+            width: 100% !important;
+        }
+    }
 </style>
