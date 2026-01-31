@@ -10,8 +10,8 @@ import Footer from "../components/Footer.astro";
     <body>
         <NavBar />
         <div class="trota">
-            <img src="/connectnet-b.png" height="60px" />
-            <b style="color: black;">todo funciona con todo</b>
+            <img id="logohc" src="/connectnet-b.png" />
+            <b id="textodes">todo funciona con todo</b>
         </div>
         <section id="content">
             <h1>Conecta tu pantalla a cualquier pantalla.</h1>
@@ -85,6 +85,25 @@ import Footer from "../components/Footer.astro";
             margin: 20px;
             max-width: 900px;
             align-self: center;
+        }
+        #logohc {
+            height: 60px;
+            width: auto;
+        }
+        #textodes {
+            margin-top: 10px;
+            text-shadow:
+                -2px -2px 0 #fff,
+                2px -2px 0 #fff,
+                -2px 2px 0 #fff,
+                2px 2px 0 #fff;
+            color: black;
+        }
+        @media screen and (max-width: 450px) {
+            #logohc {
+                height: auto;
+                width: 90%;
+            }
         }
     </style>
 </html>

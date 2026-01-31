@@ -1,6 +1,7 @@
 ---
 import ButtonGreen from "./ButtonGreen.astro";
 import ButtonBlack from "./ButtonBlack.astro";
+const textoBoton = "Recibir Pantalla";
 ---
 
 <style>
@@ -30,15 +31,40 @@ import ButtonBlack from "./ButtonBlack.astro";
 </style>
 <section>
     <img src="/net_logo.svg" alt="connectnet" onclick="window.location = '/'" />
-    <b>W.I.P (BETA)</b>
     <div>
         <ButtonBlack
-            texto="Recibir Pantalla"
+            id="mainBtn"
+            texto={textoBoton}
             onclick="window.open('https://pantalla.systemconnect.lucaspeinado.es/recibir/')"
         />
-        <ButtonGreen
-            texto="Enviar Pantalla"
-            onclick="window.location = '/send'"
-        />
+        <div id="gbtn" style="display: none;">
+            <ButtonGreen
+                texto="Enviar Pantalla"
+                onclick="window.location = '/send'"
+            />
+        </div>
     </div>
 </section>
+<script>
+    const btnX = document.getElementById("gbtn");
+    const recV = document.getElementById("recV");
+    const mainBtn = document.getElementById("mainBtn");
+
+    function updateButtonText() {
+        if (mainBtn) {
+            mainBtn.innerText =
+                window.innerWidth < 768 ? "Recibir" : "Recibir Pantalla";
+        }
+    }
+
+    updateButtonText();
+    window.addEventListener("resize", updateButtonText);
+
+    if (
+        !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent,
+        )
+    ) {
+        if (btnX) btnX.style.display = "block";
+    }
+</script>

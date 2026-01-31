@@ -1,6 +1,5 @@
 ---
-const { texto } = Astro.props;
-const { onclick } = Astro.props;
+const { texto, onclick, id } = Astro.props;
 ---
 
 <style>
@@ -15,4 +14,4 @@ const { onclick } = Astro.props;
         color: white;
     }
 </style>
-<button onclick={onclick}>{texto}</button>
+<button id={id} onclick={onclick}>{texto}</button>

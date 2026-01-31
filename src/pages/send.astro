@@ -30,4 +30,18 @@ import GlobalHead from "../components/GlobalHead.astro";
             background-color: blue;
         }
     </style>
+
+    <script>
+        const btnX = document.getElementById("gbtn");
+        if (
+            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+                navigator.userAgent,
+            )
+        ) {
+            alert(
+                "Tu navegador no soporta el envío de pantalla.\nEstamos desarrollando una App para solventarlo.",
+            );
+            window.location.href = "/";
+        }
+    </script>
 </html>
