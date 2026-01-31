@@ -1,0 +1,100 @@
+---
+import NavBar from "../components/navBar.astro";
+---
+
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>ConnectNet</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <NavBar />
+        <img id="trota" src="/caballo.png" />
+        <section id="content">
+            <h1>Conecta tu pantalla con cualquier pantalla.</h1>
+            <p>
+                connectnet (anteriormente SystemConnect) es una red
+                descentralizada para conectar cosas con cosas.
+            </p>
+            <p>
+                Por medio de red, puedes conectar tu pantalla a cualquier otra
+                pantalla por medio de internet de manera sencilla.
+            </p>
+            <p>
+                Si tienes que presentar algo en un proyector, no hace falta que
+                cambies cables entre ordenadores, simplemente abre connectnet en
+                ambos ordenadores.
+            </p><b>Sin cables, sin cambio de entradas, sin problemas.</b>
+            <h1>Ideal para pantallas públicas y conferencias.</h1>
+            <p>
+                connectnet es ideal para conferencias, aulas, salas de reuniones
+                y lugares donde hay que presentar pero no hay tiempo para
+                cambiar cables ni ganas para cambiar de entrada.
+            </p>
+            <p>
+                connectnet simplifica mucho el conectarse a una pantalla. Solo
+                hay que abrir una web y escribir el código de vinculación.
+            </p><h1>ITs, no hay que instalar nada.</h1><p>
+                Todo esto suena muy bien pero ahora hay que implementarlo, bueno
+                no. No hay que instalar ni hacer nada. Puedes enviar y recibir
+                pantallas desde la web. Para más funciones y mejor rendimiento
+                puedes instalar las apps, pero son completamente opcionales.
+            </p>
+            <h1>Gratis, libre, autónomo y abierto</h1><p>
+                connectnet es gratis, libre y abierto. Pensado con el sector
+                educativo en mente, puedes usarlo para lo que quieras, como
+                quieras y donde quieras. El desarrollo es abierto y
+                colaborativo. Haz mejoras y contribuye para mejorar connectnet.
+            </p>
+            <p>
+                El acceso al código permite a todo el mundo adaptar connectnet a
+                sus necesidades y auditar el código fuente para construir una
+                plataforma moderna, segura y abierta.<a
+                    href="https://x.com/hashtag/MadeinEU"
+                    target="_blank"
+                >
+                    #MadeInEu</a
+                >
+            </p>
+        </section>
+    </body>
+    <style>
+        a {
+            color: #00ff00;
+        }
+        .dm-sans-<uniquifier > {
+            font-family: "DM Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: <weight>;
+            font-style: normal;
+        }
+        body {
+            background-color: black;
+            font-family: "DM Sans";
+            color: white;
+            border: 0;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        #trota {
+            width: 100%;
+            height: auto;
+            border: none;
+        }
+        #content {
+            margin: 20px;
+        }
+    </style>
+</html>
