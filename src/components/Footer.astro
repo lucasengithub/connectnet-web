@@ -1,50 +1,117 @@
 ---
-
+import { LANGUAGES } from "../i18n/translations.js";
 ---
 
+<footer>
+    <p>
+        © Lucas Peinado ·
+        <a href="https://connectnet.es">connectnet.es</a>
+        <span aria-hidden="true">·</span>
+        <a href="/privacidad" data-i18n="cookies.more">Política de privacidad</a>
+    </p>
+
+    <label class="language">
+        <span class="sr-only" data-i18n="footer.language">Idioma</span>
+        <select data-language-select>
+            {
+                LANGUAGES.map((language) => (
+                    <option value={language.code}>{language.label}</option>
+                ))
+            }
+        </select>
+    </label>
+</footer>
+
 <style>
-    * {
-        color: black;
-    }
     footer {
-        background-color: #00ff00;
         display: flex;
-        flex-direction: column;
-        justify-content: end;
-        align-items: flex-end;
-        padding: 20px;
-        padding-top: 200px;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 14px 24px;
+        background-color: #0a0a0a;
+        color: #d7d7d7;
+        padding: 16px clamp(20px, 4vw, 40px);
     }
-    img {
-        height: 80px;
-        align-self: start;
+
+    p {
+        margin: 0;
+        font-size: 0.8rem;
+        letter-spacing: 0.01em;
     }
-    p,
-    h3 {
-        margin: 10px;
+
+    p span {
+        margin: 0 6px;
+        opacity: 0.5;
     }
-    @media screen and (max-width: 600px) {
-        img {
-            width: calc(100%-40px);
-            height: auto;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.18s ease;
+    }
+
+    a:hover {
+        color: #53c323;
+    }
+
+    a:focus-visible {
+        outline: 2px solid #53c323;
+        outline-offset: 3px;
+        border-radius: 4px;
+    }
+
+    .language select {
+        appearance: none;
+        background-color: transparent;
+        color: #d7d7d7;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 7px;
+        padding: 5px 26px 5px 10px;
+        font: inherit;
+        font-size: 0.78rem;
+        cursor: pointer;
+        background-image: linear-gradient(45deg, transparent 50%, #d7d7d7 50%),
+            linear-gradient(135deg, #d7d7d7 50%, transparent 50%);
+        background-position:
+            calc(100% - 14px) calc(50% - 2px),
+            calc(100% - 9px) calc(50% - 2px);
+        background-size:
+            5px 5px,
+            5px 5px;
+        background-repeat: no-repeat;
+    }
+
+    .language select:hover {
+        border-color: rgba(255, 255, 255, 0.45);
+    }
+
+    .language select:focus-visible {
+        outline: 2px solid #53c323;
+        outline-offset: 2px;
+    }
+
+    .language select option {
+        background-color: #111111;
+        color: #ffffff;
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    @media screen and (max-width: 520px) {
+        footer {
+            align-items: flex-start;
+            flex-direction: column;
         }
     }
 </style>
-<footer>
-    <p>Código fuente nuevo aún no disponible.</p>
-    <p>
-        Código funete de esta web en <a
-            href="https://github.com/lucasengithub/systemConnect-Pantalla"
-            target="_blank">Github</a
-        >.
-    </p>
-    <p>
-        Ver versión anterior: <a
-            href="https://github.com/lucasengithub/systemConnect-Pantalla"
-            target="_blank">systemConnect</a
-        >.
-    </p>
-    <h3>© Lucas Peinado - connectnet.es</h3>
-
-    <img src="/white.svg" />
-</footer>

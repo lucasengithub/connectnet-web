@@ -1,8 +1,12 @@
 ---
 type Props = {
     title?: string;
+    description?: string;
 };
-const { title = "ConnectNet" } = Astro.props;
+const {
+    title = "connectnet",
+    description = "Conecta tu pantalla a cualquier pantalla, sin cables.",
+} = Astro.props;
 ---
 
 <head>
@@ -10,6 +14,8 @@ const { title = "ConnectNet" } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" type="image/png" href="/favicon.png" />

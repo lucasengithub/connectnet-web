@@ -1,0 +1,19 @@
+<script>
+    import {
+        applyLanguage,
+        detectLanguage,
+        rememberLanguage,
+    } from "../i18n/translations.js";
+
+    const selects = document.querySelectorAll("[data-language-select]");
+
+    applyLanguage(detectLanguage());
+
+    selects.forEach((select) => {
+        select.addEventListener("change", (event) => {
+            const lang = event.target.value;
+            rememberLanguage(lang);
+            applyLanguage(lang);
+        });
+    });
+</script>

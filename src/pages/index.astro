@@ -1,108 +1,715 @@
 ---
-import NavBar from "../components/navBar.astro";
 import GlobalHead from "../components/GlobalHead.astro";
-import ColDos from "../components/ColDos.astro";
 import Footer from "../components/Footer.astro";
+import CookieBanner from "../components/CookieBanner.astro";
+import I18n from "../components/I18n.astro";
 ---
 
 <html lang="es">
-    <GlobalHead />
+    <GlobalHead title="connectnet — Conecta tu pantalla con cualquier pantalla" />
     <body>
-        <NavBar />
-        <div class="trota">
-            <img id="logohc" src="/connectnet-b.png" />
-            <b id="textodes">todo funciona con todo</b>
-        </div>
-        <section id="content">
-            <h1>Conecta tu pantalla a cualquier pantalla.</h1>
+        <main>
+            <header class="hero">
+                <div class="aurora" aria-hidden="true">
+                    <div class="aurora-layer">
+                        <span class="aurora-glow"></span>
+                        <span class="aurora-rays rays-a"></span>
+                        <span class="aurora-rays rays-b"></span>
+                        <span class="aurora-wave wave-a"></span>
+                        <span class="aurora-wave wave-b"></span>
+                    </div>
+                    <canvas class="aurora-net"></canvas>
+                </div>
 
-            <ColDos ancho="30" img="/connectinfo.jpg">
-                <p>
-                    connectnet (anteriormente SystemConnect) es una red
-                    descentralizada para conectar cosas con cosas.
+                <div class="hero-inner">
+                    <a class="logo" href="/" aria-label="connectnet">
+                        <img src="/logocon.svg" alt="connectnet" />
+                    </a>
+
+                    <p class="tagline" data-i18n="home.tagline">
+                        Conecta tu pantalla a cualquier pantalla.
+                    </p>
+
+                    <nav class="actions" aria-label="Acciones principales">
+                        <a
+                            class="btn btn-green"
+                            href="https://app.connectnet.es/portal/"
+                            target="_blank"
+                            rel="noopener"
+                            data-i18n="home.receive">Recibir pantalla</a
+                        >
+                        <a
+                            class="btn btn-black btn-send"
+                            href="https://app.connectnet.es/"
+                            target="_blank"
+                            rel="noopener"
+                            data-i18n="home.send">Enviar pantalla</a
+                        >
+                    </nav>
+                </div>
+            </header>
+
+            <section class="content">
+                <h2 data-i18n="home.s1.title">
+                    Conecta tu pantalla con cualquier pantalla
+                </h2>
+                <p data-i18n="home.s1.body">
+                    connectnet te permite enviar tu pantalla a una sala de
+                    conferencias en clases o reuniones. Simplemente escribe el
+                    código y conéctate.
                 </p>
-                <p>
-                    Por medio de red, puedes conectar tu pantalla a cualquier
-                    otra pantalla por medio de internet de manera sencilla.
+
+                <h2 data-i18n="home.s2.title">
+                    Presenta en Web, FireOS y Google TV
+                </h2>
+                <p data-i18n-html="home.s2.body">
+                    Puedes usar la versión web o la app para enviar tu pantalla.
+                    Descárgala en
+                    <a
+                        href="https://www.amazon.com/gp/product/B0F8J3GHLS"
+                        target="_blank"
+                        rel="noopener">Amazon Appstore</a
+                    >
+                    y
+                    <a
+                        href="https://play.google.com/store/apps/details?id=es.lucaspeinado.ondasystem.pantalladeondasystem"
+                        target="_blank"
+                        rel="noopener">Google Play</a
+                    >.
                 </p>
-                <p>
-                    Si tienes que presentar algo en un proyector, no hace falta
-                    que cambies cables entre ordenadores, simplemente abre
-                    connectnet en ambos ordenadores.
-                </p><b>Sin cables, sin cambio de entradas, sin problemas.</b>
-            </ColDos>
 
-            <h1>Ideal para pantallas públicas y conferencias.</h1>
-            <p>
-                connectnet es ideal para conferencias, aulas, salas de reuniones
-                y lugares donde hay que presentar pero no hay tiempo para
-                cambiar cables ni ganas para cambiar de entrada.
-            </p>
-            <p>
-                connectnet simplifica mucho el conectarse a una pantalla. Solo
-                hay que abrir una web y escribir el código de vinculación.
-            </p><h1>ITs, no hay que instalar nada.</h1><p>
-                Todo esto suena muy bien pero ahora hay que implementarlo, bueno
-                no. No hay que instalar ni hacer nada. Puedes enviar y recibir
-                pantallas desde la web. Para más funciones y mejor rendimiento
-                puedes instalar las apps, pero son completamente opcionales.
-            </p>
-            <h1>Gratis, libre, autónomo y abierto</h1><p>
-                connectnet es gratis, libre y abierto. Pensado con el sector
-                educativo en mente, puedes usarlo para lo que quieras, como
-                quieras y donde quieras. El desarrollo es abierto y
-                colaborativo. Haz mejoras y contribuye para mejorar connectnet.
-            </p>
-            <p>
-                El acceso al código permite a todo el mundo adaptar connectnet a
-                sus necesidades y auditar el código fuente para construir una
-                plataforma moderna, segura y abierta. <a
-                    href="https://x.com/hashtag/MadeinEU"
-                    target="_blank"
-                >
-                    #MadeInEu</a
-                >
-            </p>
-        </section>
-    </body><Footer />
+                <h2 data-i18n="home.s3.title">ITs, no hay que hacer nada.</h2>
+                <p data-i18n="home.s3.body">
+                    La versión web de connectnet requiere de solo un par de
+                    pestañas: una para el emisor y otra para el receptor. No hay
+                    que instalar nada ni cambiar cables.
+                </p>
 
-    <style>
-        .trota {
-            width: 100%;
-            height: 80vh;
-            background-color: white;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            border: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        #content {
-            margin: 20px;
-            max-width: 900px;
-            align-self: center;
-        }
-        #logohc {
-            height: 60px;
-            width: auto;
-        }
-        #textodes {
-            margin-top: 10px;
-            text-shadow:
-                -2px -2px 0 #fff,
-                2px -2px 0 #fff,
-                -2px 2px 0 #fff,
-                2px 2px 0 #fff;
-            color: black;
-        }
-        @media screen and (max-width: 450px) {
-            #logohc {
-                height: auto;
-                width: 90%;
+                <h2 data-i18n="home.s4.title">Para organizaciones</h2>
+                <p data-i18n-html="home.s4.body">
+                    Si eres una empresa, organización, centro educativo o
+                    cualquier otro lugar, connectnet ofrece licencias de
+                    autohospedaje de pantallas, con soporte y administración a
+                    medida. Escríbenos a
+                    <a href="mailto:lucas@connectnet.es">lucas@connectnet.es</a>
+                    para empezar.
+                </p>
+            </section>
+        </main>
+
+        <Footer />
+        <CookieBanner />
+        <I18n />
+
+        <script>
+            const canvas = document.querySelector(".aurora-net");
+            const aurora = document.querySelector(".aurora");
+            const hero = document.querySelector(".hero");
+
+            if (
+                canvas &&
+                aurora &&
+                hero &&
+                !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            ) {
+                const ctx = canvas.getContext("2d");
+                const pointer = { x: -9999, y: -9999, active: false };
+                const pointerTarget = { x: 0, y: 0 };
+                let width = 0;
+                let height = 0;
+                let nodes = [];
+                let smoothX = -9999;
+                let smoothY = -9999;
+
+                const LINK_DISTANCE = 140;
+                const REPEL_RADIUS = 175;
+
+                function createNode() {
+                    return {
+                        x: Math.random() * width,
+                        y: Math.random() * height * 0.95,
+                        vx: 0.05 + Math.random() * 0.16,
+                        vy: (Math.random() - 0.5) * 0.09,
+                        radius: 1.1 + Math.random() * 1.2,
+                        alpha: 0.24 + Math.random() * 0.3,
+                        cool: Math.random() > 0.78,
+                        phase: Math.random() * Math.PI * 2,
+                        wave: 0.05 + Math.random() * 0.13,
+                    };
+                }
+
+                function resize() {
+                    const rect = aurora.getBoundingClientRect();
+                    width = rect.width;
+                    height = rect.height;
+                    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+                    canvas.width = Math.round(width * dpr);
+                    canvas.height = Math.round(height * dpr);
+                    canvas.style.width = `${width}px`;
+                    canvas.style.height = `${height}px`;
+                    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+                    const count = Math.round(
+                        Math.min(110, Math.max(38, width / 15)),
+                    );
+                    nodes = Array.from({ length: count }, createNode);
+                }
+
+                hero.addEventListener(
+                    "pointermove",
+                    (event) => {
+                        const rect = aurora.getBoundingClientRect();
+                        pointerTarget.x = event.clientX - rect.left;
+                        pointerTarget.y = event.clientY - rect.top;
+                        pointer.active =
+                            pointerTarget.y > -40 &&
+                            pointerTarget.y < rect.height + 40;
+                    },
+                    { passive: true },
+                );
+
+                hero.addEventListener("pointerleave", () => {
+                    pointer.active = false;
+                });
+
+                function frame(time) {
+                    if (pointer.active) {
+                        if (smoothX < -100) {
+                            smoothX = pointerTarget.x;
+                            smoothY = pointerTarget.y;
+                        }
+                        smoothX += (pointerTarget.x - smoothX) * 0.16;
+                        smoothY += (pointerTarget.y - smoothY) * 0.16;
+                        pointer.x = smoothX;
+                        pointer.y = smoothY;
+                        aurora.style.setProperty("--mx", `${smoothX}px`);
+                        aurora.style.setProperty("--my", `${smoothY}px`);
+                    } else {
+                        pointer.x = -9999;
+                        pointer.y = -9999;
+                        smoothX = -9999;
+                        smoothY = -9999;
+                        aurora.style.setProperty("--mx", "50%");
+                        aurora.style.setProperty("--my", "-400px");
+                    }
+
+                    ctx.clearRect(0, 0, width, height);
+                    const t = time * 0.001;
+
+                    for (const node of nodes) {
+                        node.x += node.vx;
+                        node.y += Math.sin(t * 0.4 + node.phase) * node.wave;
+
+                        if (pointer.active && pointer.x > -1000) {
+                            const dx = node.x - pointer.x;
+                            const dy = node.y - pointer.y;
+                            const distanceSq = dx * dx + dy * dy;
+
+                            if (
+                                distanceSq <
+                                REPEL_RADIUS * REPEL_RADIUS
+                            ) {
+                                const distance =
+                                    Math.sqrt(distanceSq) || 1;
+                                const force = 1 - distance / REPEL_RADIUS;
+                                node.x += (dx / distance) * force * 12;
+                                node.y += (dy / distance) * force * 12;
+                            }
+                        }
+
+                        if (node.x > width + 30) {
+                            node.x = -30;
+                            node.y = Math.random() * height * 0.95;
+                        }
+                        if (node.y < -20) node.y = height + 20;
+                        if (node.y > height + 20) node.y = -20;
+                    }
+
+                    // Red de conexiones
+                    for (let i = 0; i < nodes.length; i++) {
+                        const a = nodes[i];
+                        const fadeA = Math.min(
+                            1,
+                            Math.max(0, 1 - a.y / (height * 1.05)),
+                        );
+
+                        for (let j = i + 1; j < nodes.length; j++) {
+                            const b = nodes[j];
+                            const dx = a.x - b.x;
+                            const dy = a.y - b.y;
+                            const distanceSq = dx * dx + dy * dy;
+
+                            if (
+                                distanceSq >
+                                LINK_DISTANCE * LINK_DISTANCE
+                            ) {
+                                continue;
+                            }
+
+                            const distance = Math.sqrt(distanceSq);
+                            const fadeB = Math.min(
+                                1,
+                                Math.max(0, 1 - b.y / (height * 1.05)),
+                            );
+                            const alpha =
+                                (1 - distance / LINK_DISTANCE) *
+                                0.12 *
+                                Math.min(fadeA, fadeB);
+
+                            if (alpha < 0.008) continue;
+
+                            ctx.strokeStyle = `rgba(83, 195, 35, ${alpha})`;
+                            ctx.lineWidth = 0.7;
+                            ctx.beginPath();
+                            ctx.moveTo(a.x, a.y);
+                            ctx.lineTo(b.x, b.y);
+                            ctx.stroke();
+                        }
+                    }
+
+                    // Nodos
+                    for (const node of nodes) {
+                        const fade = Math.min(
+                            1,
+                            Math.max(0, 1 - node.y / (height * 1.05)),
+                        );
+                        const alpha = node.alpha * (0.15 + fade * 0.85);
+
+                        ctx.fillStyle = node.cool
+                            ? `rgba(96, 255, 199, ${alpha})`
+                            : `rgba(83, 195, 35, ${alpha})`;
+                        ctx.beginPath();
+                        ctx.arc(
+                            node.x,
+                            node.y,
+                            node.radius,
+                            0,
+                            Math.PI * 2,
+                        );
+                        ctx.fill();
+                    }
+
+                    requestAnimationFrame(frame);
+                }
+
+                resize();
+                window.addEventListener("resize", resize, { passive: true });
+                requestAnimationFrame(frame);
             }
-        }
-    </style>
+        </script>
+    </body>
 </html>
+
+<style>
+    :root {
+        --green: #53c323;
+        --ink: #111111;
+        --muted: #5f6368;
+    }
+
+    body {
+        background-color: #ffffff;
+        color: var(--ink);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        flex: 1;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        padding: clamp(96px, 13vw, 168px) 24px clamp(56px, 7vw, 88px);
+        background-color: #ffffff;
+    }
+
+    /* Aurora boreal en la parte superior */
+    .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto 0;
+        height: 150px;
+        z-index: -1;
+        background: linear-gradient(
+            180deg,
+            rgba(83, 195, 35, 0.3) 0%,
+            rgba(83, 195, 35, 0.1) 45%,
+            rgba(83, 195, 35, 0) 100%
+        );
+        pointer-events: none;
+    }
+
+    .aurora {
+        position: absolute;
+        inset: 0 0 auto 0;
+        height: clamp(320px, 34vw, 500px);
+        z-index: -1;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    /* El hueco blanco sigue al ratón y deja ver el fondo, como si las
+       partículas se apartaran a su paso. */
+    .aurora-layer {
+        position: absolute;
+        inset: 0;
+        -webkit-mask-image: radial-gradient(
+            circle 170px at var(--mx, 50%) var(--my, -400px),
+            transparent 0%,
+            rgba(0, 0, 0, 0.35) 45%,
+            #000 100%
+        );
+        mask-image: radial-gradient(
+            circle 170px at var(--mx, 50%) var(--my, -400px),
+            transparent 0%,
+            rgba(0, 0, 0, 0.35) 45%,
+            #000 100%
+        );
+    }
+
+    .aurora-net {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    .aurora-glow {
+        position: absolute;
+        inset: -20% -10% auto -10%;
+        height: 120%;
+        background:
+            radial-gradient(
+                55% 90% at 50% -18%,
+                rgba(83, 195, 35, 0.62) 0%,
+                rgba(83, 195, 35, 0) 70%
+            ),
+            radial-gradient(
+                42% 75% at 16% -8%,
+                rgba(96, 255, 199, 0.44) 0%,
+                rgba(96, 255, 199, 0) 72%
+            ),
+            radial-gradient(
+                44% 78% at 84% -10%,
+                rgba(158, 255, 92, 0.4) 0%,
+                rgba(158, 255, 92, 0) 72%
+            );
+        filter: blur(18px);
+        animation: aurora-breathe 14s ease-in-out infinite alternate;
+    }
+
+    .aurora-rays {
+        position: absolute;
+        inset: -35% -35% auto -35%;
+        height: 160%;
+        background: repeating-linear-gradient(
+            104deg,
+            rgba(83, 195, 35, 0) 0 26px,
+            rgba(83, 195, 35, 0.42) 42px,
+            rgba(108, 255, 196, 0.4) 56px,
+            rgba(83, 195, 35, 0) 86px
+        );
+        filter: blur(24px);
+        -webkit-mask-image: linear-gradient(
+            180deg,
+            #000 4%,
+            rgba(0, 0, 0, 0.55) 48%,
+            transparent 82%
+        );
+        mask-image: linear-gradient(
+            180deg,
+            #000 4%,
+            rgba(0, 0, 0, 0.55) 48%,
+            transparent 82%
+        );
+        opacity: 0.88;
+        will-change: transform;
+        animation: aurora-rays 26s ease-in-out infinite alternate;
+    }
+
+    .rays-b {
+        background: repeating-linear-gradient(
+            96deg,
+            rgba(83, 195, 35, 0) 0 34px,
+            rgba(122, 255, 172, 0.4) 52px,
+            rgba(83, 195, 35, 0.36) 66px,
+            rgba(83, 195, 35, 0) 104px
+        );
+        opacity: 0.62;
+        animation-duration: 34s;
+        animation-direction: alternate-reverse;
+    }
+
+    .aurora-wave {
+        position: absolute;
+        width: 62%;
+        height: 260px;
+        border-radius: 50%;
+        filter: blur(44px);
+        opacity: 0.85;
+        will-change: transform;
+    }
+
+    .wave-a {
+        left: 4%;
+        top: -130px;
+        background: radial-gradient(
+            ellipse at center,
+            rgba(83, 195, 35, 0.72) 0%,
+            rgba(83, 195, 35, 0) 70%
+        );
+        animation: aurora-wave-a 19s ease-in-out infinite alternate;
+    }
+
+    .wave-b {
+        right: 2%;
+        top: -110px;
+        background: radial-gradient(
+            ellipse at center,
+            rgba(86, 255, 198, 0.5) 0%,
+            rgba(86, 255, 198, 0) 70%
+        );
+        animation: aurora-wave-b 24s ease-in-out infinite alternate;
+    }
+
+    @keyframes aurora-breathe {
+        0% {
+            opacity: 0.8;
+            transform: scale(1);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1.06);
+        }
+    }
+
+    @keyframes aurora-rays {
+        0% {
+            transform: translate3d(-5%, 0, 0) skewX(-4deg) scaleY(1);
+        }
+        50% {
+            transform: translate3d(1%, -14px, 0) skewX(1deg) scaleY(1.08);
+        }
+        100% {
+            transform: translate3d(6%, 6px, 0) skewX(4deg) scaleY(0.96);
+        }
+    }
+
+    @keyframes aurora-wave-a {
+        0% {
+            transform: translate3d(-8%, 0, 0) scale(1);
+        }
+        50% {
+            transform: translate3d(10%, 22px, 0) scale(1.12);
+        }
+        100% {
+            transform: translate3d(-2%, -8px, 0) scale(0.95);
+        }
+    }
+
+    @keyframes aurora-wave-b {
+        0% {
+            transform: translate3d(6%, 0, 0) scale(0.96);
+        }
+        50% {
+            transform: translate3d(-12%, 18px, 0) scale(1.1);
+        }
+        100% {
+            transform: translate3d(2%, -10px, 0) scale(1);
+        }
+    }
+
+    .hero-inner {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        max-width: 960px;
+    }
+
+    .logo {
+        display: block;
+        width: clamp(260px, 43vw, 620px);
+        text-decoration: none;
+        user-select: none;
+    }
+
+    .logo img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .tagline {
+        margin: clamp(26px, 3.4vw, 40px) 0 0;
+        font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+        color: var(--muted);
+        letter-spacing: 0.01em;
+    }
+
+    .actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: clamp(30px, 3.6vw, 44px);
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 11px 19px;
+        border-radius: 9px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        line-height: 1.2;
+        text-decoration: none;
+        transition: background-color 0.18s ease;
+    }
+
+    .btn-green {
+        background-color: var(--green);
+        color: #0b1a05;
+    }
+
+    .btn-green:hover {
+        background-color: #67d63a;
+    }
+
+    .btn-black {
+        background-color: #0a0a0a;
+        color: #ffffff;
+    }
+
+    .btn-black:hover {
+        background-color: #242424;
+    }
+
+    /* ---------- Contenido ---------- */
+    .content {
+        width: 100%;
+        max-width: 900px;
+        margin-inline: auto;
+        padding: 0 clamp(24px, 5vw, 60px) clamp(72px, 9vw, 120px);
+    }
+
+    .content h2 {
+        margin: clamp(44px, 5vw, 60px) 0 14px;
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        line-height: 1.2;
+        color: var(--ink);
+    }
+
+    .content h2:first-child {
+        margin-top: 0;
+    }
+
+    .content p {
+        margin: 0;
+        max-width: 66ch;
+        font-size: clamp(0.98rem, 1.15vw, 1.06rem);
+        line-height: 1.7;
+        color: #3d3f42;
+    }
+
+    .content a {
+        color: var(--green);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-decoration-thickness: 1px;
+        transition: color 0.18s ease;
+    }
+
+    .content a:hover {
+        color: #3f8c1c;
+    }
+
+    .content a[href^="mailto"] {
+        font-style: italic;
+    }
+
+    /* ---------- Foco accesible ---------- */
+    .logo:focus-visible,
+    .btn:focus-visible,
+    .content a:focus-visible {
+        outline: 2px solid var(--green);
+        outline-offset: 3px;
+        border-radius: 6px;
+    }
+
+    /* ---------- Móvil ---------- */
+    @media screen and (max-width: 768px) {
+        .hero {
+            padding: 84px 20px 64px;
+        }
+
+        .hero::before {
+            height: 90px;
+        }
+
+        .aurora {
+            height: 340px;
+        }
+
+        .aurora-rays {
+            filter: blur(22px);
+        }
+
+        .aurora-wave {
+            filter: blur(32px);
+        }
+
+        .logo {
+            width: clamp(240px, 58vw, 340px);
+        }
+
+        /* En móvil no se puede enviar pantalla */
+        .btn-send {
+            display: none;
+        }
+
+        .content {
+            padding: 8px 20px 72px;
+        }
+
+        .content h2 {
+            margin-top: 42px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .aurora-glow,
+        .aurora-rays,
+        .aurora-wave {
+            animation: none;
+        }
+
+        .aurora-layer {
+            -webkit-mask-image: none;
+            mask-image: none;
+        }
+
+        .aurora-net {
+            display: none;
+        }
+
+        .btn {
+            transition: none;
+        }
+    }
+</style>

@@ -1,0 +1,164 @@
+---
+import GlobalHead from "../components/GlobalHead.astro";
+import Footer from "../components/Footer.astro";
+import CookieBanner from "../components/CookieBanner.astro";
+import I18n from "../components/I18n.astro";
+---
+
+<html lang="es">
+    <GlobalHead
+        title="Política de privacidad | connectnet"
+        description="Qué datos trata connectnet, para qué se usan y cómo ejercer tus derechos."
+    />
+    <body>
+        <main class="legal">
+            <header class="legal-header">
+                <a class="logo" href="/" aria-label="connectnet">
+                    <img src="/logocon.svg" alt="connectnet" />
+                </a>
+            </header>
+
+            <article>
+                <h1 data-i18n="legal.title">Política de privacidad</h1>
+                <p class="updated" data-i18n="legal.updated">
+                    Última actualización: octubre de 2026
+                </p>
+                <p data-i18n="legal.intro">
+                    Esta política explica qué datos trata connectnet, para qué
+                    se usan y cómo puedes ejercer tus derechos.
+                </p>
+
+                <h2 data-i18n="legal.h1">Responsable del tratamiento</h2>
+                <p data-i18n="legal.p1">
+                    connectnet es un proyecto emergente de Lucas Peinado.
+                    Puedes contactar en lucas@connectnet.es.
+                </p>
+
+                <h2 data-i18n="legal.h2">Datos que tratamos</h2>
+                <p data-i18n="legal.p2">
+                    No necesitas crear una cuenta para usar esta web y no
+                    recopilamos datos personales en ella. Los servidores pueden
+                    registrar datos técnicos como la dirección IP, el navegador
+                    y la fecha de acceso con la única finalidad de garantizar la
+                    seguridad y el funcionamiento del servicio.
+                </p>
+
+                <h2 data-i18n="legal.h3">
+                    Cookies y almacenamiento local
+                </h2>
+                <p data-i18n="legal.p3">
+                    Esta web solo utiliza almacenamiento local técnico para
+                    recordar tu idioma y tu decisión sobre el aviso de cookies.
+                    No utilizamos cookies publicitarias, de perfilado ni de
+                    seguimiento de terceros.
+                </p>
+
+                <h2 data-i18n="legal.h4">Finalidad y base legal</h2>
+                <p data-i18n="legal.p4">
+                    El tratamiento de datos técnicos se basa en el interés
+                    legítimo de mantener el servicio seguro y operativo. El
+                    almacenamiento local se usa con tu consentimiento, que
+                    puedes retirar borrando los datos del sitio en tu navegador.
+                </p>
+
+                <h2 data-i18n="legal.h5">Servicios de terceros</h2>
+                <p data-i18n="legal.p5">
+                    Los botones de descarga enlazan a Amazon Appstore y Google
+                    Play, y los botones de pantalla abren app.connectnet.es.
+                    Estos servicios aplican sus propias políticas de
+                    privacidad.
+                </p>
+
+                <h2 data-i18n="legal.h6">Tus derechos</h2>
+                <p data-i18n="legal.p6">
+                    Puedes ejercer tus derechos de acceso, rectificación,
+                    supresión, oposición, limitación y portabilidad escribiendo
+                    a lucas@connectnet.es. También puedes reclamar ante la
+                    Agencia Española de Protección de Datos en aepd.es.
+                </p>
+            </article>
+        </main>
+
+        <Footer />
+        <CookieBanner />
+        <I18n />
+    </body>
+</html>
+
+<style>
+    .legal {
+        flex: 1;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px clamp(72px, 9vw, 112px);
+    }
+
+    .legal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: clamp(28px, 4vw, 44px) 0 clamp(40px, 6vw, 64px);
+    }
+
+    .logo {
+        display: block;
+        width: clamp(150px, 18vw, 210px);
+    }
+
+    .logo img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    article {
+        max-width: 720px;
+    }
+
+    h1 {
+        margin: 0 0 10px;
+        font-size: clamp(1.9rem, 4vw, 2.6rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+    }
+
+    .updated {
+        margin: 0 0 34px;
+        color: #8a8d91;
+        font-size: 0.82rem;
+    }
+
+    h2 {
+        margin: 36px 0 10px;
+        font-size: 1.08rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+    }
+
+    article p {
+        margin: 0;
+        color: #3d3f42;
+        font-size: 0.98rem;
+        line-height: 1.75;
+    }
+
+    .logo:focus-visible {
+        outline: 2px solid #53c323;
+        outline-offset: 4px;
+        border-radius: 6px;
+    }
+
+    @media screen and (max-width: 560px) {
+        .legal {
+            padding: 0 20px 64px;
+        }
+
+        .legal-header {
+            padding-top: 26px;
+        }
+    }
+</style>
